@@ -95,8 +95,8 @@ div.upgrades-container {
     padding: 20px;
     box-sizing: border-box;
     height: 100vh;
-    border-left: 10px solid black;
-    background-image: url("images/papel.webp");
+    border-left: 20px solid black;
+    background-image: url("images/leaves-6824098.png");
 }
 
 div.upgrades {
