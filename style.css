@@ -1,14 +1,5 @@
 @charset 'UTF-8';
 
-@keyframes click-here {
-    0% {
-        width: 100px;
-    }
-
-    100% {
-        width: 110px;
-    }
-}
 
 
 * {
@@ -17,10 +8,6 @@
 }
 
 div.wrapper {
-    background-image: url("images/fundo.jpg");
-    background-position: left center;
-    background-size: cover;
-    background-repeat: no-repeat;
     display: flex;
     box-sizing: border-box;
 }
@@ -28,6 +15,10 @@ div.wrapper {
 .layout {
     height: 100%;
     width: 100%;
+    background-image: url("images/fundo.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 
@@ -71,8 +62,8 @@ div#clicker > .layout > .background-clicker > button {
     height: 0px;
     width: 0px;
     cursor: pointer;
-    position: relative;
-    right: 70px;
+    position: absolute;
+    right: 100px;
 }
 
 div#clicker > .layout > .background-clicker > button > img {
@@ -80,10 +71,6 @@ div#clicker > .layout > .background-clicker > button > img {
     right: 50px;
     bottom: 50px;
     width: 100px;
-    animation-name: click-here;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
 }
 
 
@@ -96,12 +83,12 @@ div.upgrades-container {
     box-sizing: border-box;
     height: 100vh;
     border-left: 20px solid black;
-    background-image: url("images/leaves-6824098.png");
+    background-color: black;
 }
 
 div.upgrades {
     display: block;
-    background-color: rgba(0, 0, 0, 0.746);
+    background-color: rgba(136, 57, 57, 0.711);
     width: 98%;
     height: 93vh;
     border-radius: 10px;
@@ -115,15 +102,14 @@ div.upgrades::-webkit-scrollbar {
 }
 
 div.upgrades::-webkit-scrollbar-track {
-    background-color: black;
-    border-radius: 10px;
+    background-color: rgba(255, 0, 0, 0.239);
+    border-radius: 0px 10px 10px 0px;
     z-index: 10;
 }
 
 div.upgrades::-webkit-scrollbar-thumb {
-    background-color: gold;
+    background-color: rgb(255, 0, 0);
     border-radius: 0px 10px 10px 0px;
-    border: 3px solid orange;
     z-index: 10;
 }
 
@@ -141,9 +127,13 @@ div.upgrades::-webkit-scrollbar-thumb {
     width: 100%;
     text-align: center;
     font-family: sans-serif;
-    background-color: lightsalmon;
+    background-color: rgb(255, 72, 0);
 }
 
 .power-up:hover {
     background-color: gold;
+}
+
+.wrapper .clicker .layout .background-clicker button img:hover {
+    
 }
