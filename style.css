@@ -7,6 +7,11 @@
     padding: 0;
 }
 
+body {
+    background-color: #0F061F;
+    
+}
+
 div.wrapper {
     display: flex;
     box-sizing: border-box;
@@ -14,11 +19,15 @@ div.wrapper {
 
 .layout {
     height: 100%;
-    width: 100%;
+    width: 527px;
+    box-sizing: border-box;
+    border: 5px solid black;
     background-image: url("images/background/fundo-ciberpunk.png");
-    background-position: 50% 90%;
-    background-size: cover;
+    background-position: 50% 50%;
+    background-size: contain;
     background-repeat: no-repeat;
+    background-color: rgb(66, 1, 66);
+
 }
 
 
@@ -92,22 +101,36 @@ div.upgrades-container {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    flex: 1;
-    padding: 20px;
     box-sizing: border-box;
-    height: 100vh;
-    border-left: 20px solid black;
-    background-color: black;
+}
+
+a.upgrades-btn {
+    position: absolute;
+    top: 1%;
+    right: 0.5%;
+    background-color: gold;
+    padding: 2px 2px 0px 3px;
+    border-radius: 10px;
+    border: 2px solid black;
+    cursor: default;
 }
 
 div.upgrades {
-    display: block;
+    display: none;
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    right: 00px;
+    top: 39px;
+    border: 5px solid black;
     background-color: rgba(136, 57, 57, 0.711);
-    width: 98%;
-    height: 93vh;
     border-radius: 10px;
     overflow: scroll;
     overflow-x: hidden;
+}
+
+.wrapper > .upgrades-container > a.upgrades-btn:hover div.upgrades {
+    display: block;
 }
 
 div.upgrades::-webkit-scrollbar {
@@ -146,8 +169,4 @@ div.upgrades::-webkit-scrollbar-thumb {
 
 .power-up:hover {
     background-color: gold;
-}
-
-.wrapper .clicker .layout .background-clicker button img:hover {
-    
 }
