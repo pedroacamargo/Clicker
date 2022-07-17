@@ -17,9 +17,14 @@ div.wrapper {
     box-sizing: border-box;
 }
 
+#clicker {
+    display: flex;
+    justify-content: center;
+}
+
 .layout {
     height: 100%;
-    width: 527px;
+    width: 525px;
     box-sizing: border-box;
     border: 5px solid black;
     background-image: url("images/background/fundo-ciberpunk.png");
@@ -27,7 +32,7 @@ div.wrapper {
     background-size: contain;
     background-repeat: no-repeat;
     background-color: rgb(66, 1, 66);
-
+    margin: 0px 20px;
 }
 
 
@@ -74,28 +79,32 @@ div#clicker {
     align-items: center;
     width: 250px;
     height: 100px;
-    position: relative;
-    top: 50%;
-    left: 50%;
+    position: absolute;
     transform: translate(-50%, -50%);
 }
 
-div#clicker > .layout > .background-clicker > button {
+div#clicker > .layout >.background-clicker > button {
     height: 0px;
     width: 0px;
     cursor: pointer;
     position: relative;
-    right: calc(20px + 5%);
-    top: 100px;
+    top: 70vh;
+    left: 30vw;
 }
 
-div#clicker > .layout > .background-clicker > button > img {
+div#clicker > .layout >.background-clicker > button > img {
     position: relative;
-    right: 50px;
+    right: 30px;
     bottom: 50px;
     width: calc(40px + 2vw);
 }
 
+.watch {
+    background-color: black;
+    height: 100vh;
+    width: 400px;
+    border: 1px solid red;
+}
 
 div.upgrades-container {
     display: flex;
