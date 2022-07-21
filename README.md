@@ -1,2 +1,2 @@
 # Clicker
- Clicker game
+Clicker game -> <a href="https://pedroacamargo.github.io/Clicker/">link</a>
