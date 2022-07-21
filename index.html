@@ -21,10 +21,8 @@
 
             <div class="watch">
 
-                <span class="score">
-
-                    <p>Relógios: </p>
-
+                <span class="score" id="score">
+                    0
                 </span>
 
             </div>
@@ -39,7 +37,7 @@
 
                 
                 <div class="background-clicker">
-                    <button>
+                    <button id="clicar" onclick="clicar(clickingPower)">
                         <img src="images/personagem/personagem-actionfull.gif" alt="">
                     </button>
                 </div>
@@ -60,7 +58,7 @@
 
                 <div id="upgrades" class="upgrades">
                     <div class="sign">UPGRADES</div>
-                    <button class="power-up"></button>
+                    <button class="power-up" onclick="buyMen()">Man [<span id="mencost">15</span>] -- <span id="men">0</span></button>
                     <button class="power-up"></button>
                     <button class="power-up"></button>
                     <button class="power-up"></button>
@@ -86,7 +84,37 @@
 
 
 
+    <script>
+        var score = 0
+        clickingPower = 1
 
+        var menCost = 15
+        var men = 0
+
+        function buyMen() {
+            if (score >= menCost) {
+                score = score - menCost
+                men = men + 1
+                menCost = Math.round(menCost * 1.15)  // arredonda
+
+                document.getElementById("score").innerHTML = "Relógios: " + score
+                document.getElementById("mencost").innerHTML = menCost
+                document.getElementById("men").innerHTML = men
+            }
+        }
+
+        function clicar(amount) {
+            score += amount
+            document.getElementById("score").innerHTML = 'Relógios: ' + score
+        }
+        
+        
+        setInterval(function() {
+            score = score + men
+            document.getElementById("score").innerHTML = 'Relógios: ' + score
+        }, 1000); // 1000ms = 1 second
+
+    </script>
 
 </body>
 </html>
