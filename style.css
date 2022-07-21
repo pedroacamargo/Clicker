@@ -30,6 +30,38 @@ div.wrapper {
     justify-content: center;
 }
 
+@keyframes gradient-animation {
+    0% {
+        left: 0px;
+    }
+
+    100% {
+        left: -1100px;
+    }
+}
+
+.background-animation {
+    animation-name: gradient-animation;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-duration: 6s;
+    position: relative;
+    left: -1100px;
+    width: 1500px;
+    height: 100vh;
+    background-image: linear-gradient(to right, #662D8C, #ED1E79);
+}
+
+.watch {
+    background-color: black;
+    overflow: hidden;
+    height: 100vh;
+    width: 400px;
+    border: 5px solid rgb(255, 0, 153);
+    box-sizing: border-box;
+}
+
 .layout {
     height: 100%;
     width: 525px;
@@ -58,9 +90,10 @@ div.header {
 }
 
 .score {
+    font-family: var(--font04);
     position: relative;
-    left: 40%;
-    top: 20px;
+    left: 150px;
+    top: -96vh;
     display: inline;
     padding: 15px;
     border: 2px solid black;
@@ -82,8 +115,8 @@ div#clicker {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 250px;
-    height: 100px;
+    width: 525px;
+    height: 100vh;
     position: absolute;
     transform: translate(-50%, -50%);
 }
@@ -93,23 +126,17 @@ div#clicker > .layout >.background-clicker > button {
     width: 0px;
     cursor: pointer;
     position: relative;
-    top: 70vh;
-    left: 30vw;
+    top: 75%;
+    left: 80%;
 }
 
 div#clicker > .layout >.background-clicker > button > img {
     position: relative;
     right: 30px;
     bottom: 50px;
-    width: calc(40px + 2vw);
+    width: calc(30px + 2vw);
 }
 
-.watch {
-    background-color: black;
-    height: 100vh;
-    width: 400px;
-    border: 1px solid red;
-}
 
 div.upgrades-container {
     width: 300px;
@@ -123,7 +150,7 @@ div.upgrades-container {
 
 .power-up {
     width: 80px;
-    height: 120px;
+    height: 80px;
     background-color: white;
     border-radius: 50px;
     border: 3px solid black;
@@ -131,11 +158,27 @@ div.upgrades-container {
     cursor: pointer;
     font-family: var(--font04);
     color: yellow;
+    border: 2px solid gold;
+    box-shadow: 1px 1px 20px gold;
+}
 
+.upgrade-hover {
+    position: absolute;
+    background-color: black;
+    width: 100px;
+    border: 2px solid white;
+    top: 75px;
+    right: 95px;
+    display: none;
+}
+
+.power-up:hover > .upgrade-hover {
+    display: block;
 }
 
 #menimg {
     width: 30px;
+    position: relative;
 }
 
 #menupgrade {
@@ -143,7 +186,7 @@ div.upgrades-container {
 }
 
 .men {
-    background-color: blueviolet;
+    background-color: rgb(48, 13, 81);
 }
 
 .men:hover {

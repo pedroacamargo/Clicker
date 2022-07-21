@@ -20,11 +20,12 @@
         <div id="clicker" class="clicker">
 
             <div class="watch">
-
+                <div class="background-animation"></div>
+                
                 <span class="score" id="score">
-                    0
+                    Relógios: 0
                 </span>
-
+                    
             </div>
 
             <div class="layout">
@@ -54,7 +55,10 @@
         <div class="upgrades-container">
 
             <button class="power-up men" onclick="buyMen()" id="menupgrade">
-                <img src="images/personagem/personagem-action01.png" alt="men" id="menimg"> <br> [<span id="mencost">15</span>] <br><span id="men"> 0 </span>
+                <img src="images/personagem/personagem-action01.png" alt="men" id="menimg">
+                <div class="upgrade-hover">
+                    Custo: <span id="mencost">15</span> <br> Quantidade:<span id="men"> 0 </span>
+                </div>
             </button>
 
         </div> <!-- End upgrades container -->
