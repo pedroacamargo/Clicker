@@ -50,33 +50,13 @@
         </div> <!-- End city -->
 
 
+
         <div class="upgrades-container">
 
-            <a class="upgrades-btn" href="#">
-                <img src="images/shopping-cart.png" alt="">
-            
+            <button class="power-up men" onclick="buyMen()" id="menupgrade">
+                <img src="images/personagem/personagem-action01.png" alt="men" id="menimg"> <br> [<span id="mencost">15</span>] <br><span id="men"> 0 </span>
+            </button>
 
-                <div id="upgrades" class="upgrades">
-                    <div class="sign">UPGRADES</div>
-                    <button class="power-up" onclick="buyMen()">Man [<span id="mencost">15</span>] -- <span id="men">0</span></button>
-                    <button class="power-up"></button>
-                    <button class="power-up"></button>
-                    <button class="power-up"></button>
-                    <button class="power-up"></button>
-                    <button class="power-up"></button>
-                    <button class="power-up"></button>
-                    <button class="power-up"></button>
-                    <button class="power-up"></button>
-                    <button class="power-up"></button>
-                    <button class="power-up"></button>
-                    <button class="power-up"></button>
-                    <button class="power-up"></button>
-                    <button class="power-up"></button>
-                    <button class="power-up"></button>
-                    <button class="power-up"></button>
-                    
-                </div>
-            </a>
         </div> <!-- End upgrades container -->
 
 
@@ -90,6 +70,7 @@
 
         var menCost = 15
         var men = 0
+
 
         function buyMen() {
             if (score >= menCost) {

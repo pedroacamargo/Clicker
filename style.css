@@ -1,6 +1,14 @@
 @charset 'UTF-8';
 
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Indie+Flower&family=Lobster&family=Pangolin&display=swap');
 
+:root {
+
+    --font01: 'Indie Flower';
+    --font02: 'Dancing Script';
+    --font03: 'Lobster';
+    --font04: 'Pangolin';
+}
 
 * {
     margin: 0;
@@ -104,75 +112,40 @@ div#clicker > .layout >.background-clicker > button > img {
 }
 
 div.upgrades-container {
+    width: 300px;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
     box-sizing: border-box;
 }
 
-a.upgrades-btn {
-    position: absolute;
-    top: 1%;
-    right: 0.5%;
-    background-color: gold;
-    padding: 2px 2px 0px 3px;
-    border-radius: 10px;
-    border: 2px solid black;
-    cursor: default;
+
+.power-up {
+    width: 80px;
+    height: 120px;
+    background-color: white;
+    border-radius: 50px;
+    border: 3px solid black;
+    margin: 2px 0px 1px 5px;
+    cursor: pointer;
+    font-family: var(--font04);
+    color: yellow;
+
 }
 
-div.upgrades {
-    display: none;
-    width: 400px;
-    height: 200px;
-    position: absolute;
-    right: 00px;
-    top: 39px;
-    border: 5px solid black;
-    background-color: rgba(136, 57, 57, 0.711);
-    border-radius: 10px;
-    overflow: scroll;
-    overflow-x: hidden;
+#menimg {
+    width: 30px;
 }
 
-.wrapper > .upgrades-container > a.upgrades-btn:hover div.upgrades {
+#menupgrade {
     display: block;
 }
 
-div.upgrades::-webkit-scrollbar {
-    width: 20px;
-    z-index: 10;
+.men {
+    background-color: blueviolet;
 }
 
-div.upgrades::-webkit-scrollbar-track {
-    background-color: rgba(255, 0, 0, 0.239);
-    border-radius: 0px 10px 10px 0px;
-    z-index: 10;
-}
-
-div.upgrades::-webkit-scrollbar-thumb {
-    background-color: rgb(255, 0, 0);
-    border-radius: 0px 10px 10px 0px;
-    z-index: 10;
-}
-
-.power-up {
-    background-color: rgb(170, 156, 80);
-    border-radius: 5px;
-    border: 3px solid black;
-    width: 95%;
-    height: 80px;
-    margin: 2px 0px 1px 5px;
-    cursor: pointer;
-}
-
-.sign {
-    width: 100%;
-    text-align: center;
-    font-family: sans-serif;
-    background-color: rgb(255, 72, 0);
-}
-
-.power-up:hover {
-    background-color: gold;
+.men:hover {
+    background-color: rgb(102, 53, 147);
 }
