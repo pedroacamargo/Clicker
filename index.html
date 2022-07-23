@@ -20,12 +20,16 @@
         <div id="clicker" class="clicker">
 
             <div class="watch">
-                <div class="background-animation"></div>
                 
-                <span class="score" id="score">
+                <div class="score" id="score">
                     Relógios: 0
-                </span>
-                    
+                </div>
+                
+                <img src="images/personagem/personagem-action01.png" id="clickerbutton" alt="" onclick="clicar(clickingPower)">
+
+
+                <div class="background-animation"></div>
+
             </div>
 
             <div class="layout">
@@ -89,8 +93,11 @@
         }
 
         function clicar(amount) {
+            var imgclick = window.document.getElementById("clickerbutton")
+            
             score += amount
             document.getElementById("score").innerHTML = 'Relógios: ' + score
+
         }
         
         

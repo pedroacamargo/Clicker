@@ -50,6 +50,7 @@ div.wrapper {
     left: -1100px;
     width: 1500px;
     height: 100vh;
+    top: -230px;
     background-image: linear-gradient(to right, #662D8C, #ED1E79);
 }
 
@@ -60,6 +61,14 @@ div.wrapper {
     width: 400px;
     border: 5px solid rgb(255, 0, 153);
     box-sizing: border-box;
+}
+
+#clickerbutton {
+    position: relative;
+    top: 130px;
+    z-index: 2;
+    left: 140px;
+    cursor: pointer;
 }
 
 .layout {
@@ -92,9 +101,11 @@ div.header {
 .score {
     font-family: var(--font04);
     position: relative;
-    left: 150px;
-    top: -96vh;
-    display: inline;
+    left: 10px;
+    width: 340px;
+    top: 10px;
+    z-index: 2;
+    display: block;
     padding: 15px;
     border: 2px solid black;
     border-radius: 20px;
