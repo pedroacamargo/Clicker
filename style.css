@@ -65,7 +65,7 @@ div.wrapper {
 
 #clickerbutton {
     position: relative;
-    top: 230px;
+    top: 39%;
     z-index: 2;
     left: 200px;
     cursor: pointer;

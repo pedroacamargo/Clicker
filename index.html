@@ -118,7 +118,7 @@
                 score = score - cursorCost
                 clickingPower = clickingPower * 2
                 cursors = cursors + 1
-                cursorCost = Math.round(cursorCost * 1.5)
+                cursorCost = Math.round(cursorCost * 4)
 
                 document.getElementById("score").innerHTML = "Relógios: " + score
                 document.getElementById("cursorcost").innerHTML = cursorCost
@@ -146,7 +146,7 @@
                 score = score - catCost
                 cats = cats + 1
                 catsPerSecond = catsPerSecond + 10
-                catCost = Math.round(catCost * 1.21)
+                catCost = Math.round(catCost * 1.2)
                 watchesPerSecond = watchesPerSecond + 10
 
                 document.getElementById("score").innerHTML = "Relógios: " + score
