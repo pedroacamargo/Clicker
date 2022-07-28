@@ -21,11 +21,15 @@
 
             <div class="watch">
                 
-                <div class="score" id="score">
-                    Relógios: 0
+                <div class="scores" id="scores">
+                    <span class="score" id="score">Relógios: 0</span> <br>
+                    <span id="watchesPerSecond">RPS: 0</span> 
+                    <span id="clickingPower">CP: 1</span>
                 </div>
+
+
                 
-                <img src="images/personagem/personagem-action01.png" id="clickerbutton" alt="" onclick="clicar(clickingPower)">
+                <img src="images/relogio.png" id="clickerbutton" alt="" onclick="clicar(clickingPower)">
 
 
                 <div class="background-animation"></div>
@@ -60,19 +64,29 @@
             <img src="images/loja/store.gif" alt="" class="store-img"> <!--mudar img-->
 
             <div class="upgrades">
-                <button class="power-up men" onclick="buyMen()" id="menupgrade">
+
+
+                <button class="power-up cursor" onclick="buyCursor()" class="menupgrade">
+                    <img src="images/select.png" alt="men" id="cursorimg">
+                    <div class="upgrade-hover">
+                        Custo: <span id="cursorcost">100</span> <br> Quantidade:<span id="cursors"> 0 </span>
+                    </div>
+                </button> <!-- PRIMEIRO UPGRADE -->
+
+
+                <button class="power-up men" onclick="buyMen()" class="menupgrade">
                     <img src="images/personagem/personagem-action01.png" alt="men" id="menimg">
                     <div class="upgrade-hover">
                         Custo: <span id="mencost">15</span> <br> Quantidade:<span id="men"> 0 </span>
                     </div>
-                </button> <!-- PRIMEIRO UPGRADE -->
-
-                <button class="power-up cat" onclick="buyMen()" id="menupgrade">
-                    <img src="images/gatinho.png" alt="men" id="menimg">
-                    <div class="upgrade-hover">
-                        Custo: <span id="mencost">15</span> <br> Quantidade:<span id="men"> 0 </span>
-                    </div>
                 </button> <!-- SEGUNDO UPGRADE -->
+
+                <button class="power-up cat" onclick="buyCat()" class="menupgrade">
+                    <img src="images/gatinho.png" alt="men" id="catimg">
+                    <div class="upgrade-hover">
+                        Custo: <span id="catCost">400</span> <br> Quantidade:<span id="cats"> 0 </span>
+                    </div>
+                </button> <!-- TERCEIRO UPGRADE -->
 
             </div>
 
@@ -85,21 +99,60 @@
 
     <script>
         var score = 0
-        clickingPower = 1
+        var clickingPower = 1
+
+        var cursorCost = 100
+        var cursors = 0
 
         var menCost = 15
         var men = 0
 
+        var catCost = 400
+        var cats = 0
+        var catsPerSecond = 0
+
+        var watchesPerSecond = 0
+
+        function buyCursor() {
+            if (score >= cursorCost) {
+                score = score - cursorCost
+                clickingPower = clickingPower * 2
+                cursors = cursors + 1
+                cursorCost = Math.round(cursorCost * 1.5)
+
+                document.getElementById("score").innerHTML = "Relógios: " + score
+                document.getElementById("cursorcost").innerHTML = cursorCost
+                document.getElementById("cursors").innerHTML = cursors
+                document.getElementById("clickingPower").innerHTML = "CP: " + clickingPower
+            }
+        }
 
         function buyMen() {
             if (score >= menCost) {
                 score = score - menCost
                 men = men + 1
                 menCost = Math.round(menCost * 1.15)  // arredonda
+                watchesPerSecond = watchesPerSecond + 1
 
                 document.getElementById("score").innerHTML = "Relógios: " + score
                 document.getElementById("mencost").innerHTML = menCost
                 document.getElementById("men").innerHTML = men
+                document.getElementById("watchesPerSecond").innerHTML = "RPS: " + watchesPerSecond
+            }
+        }
+
+        function buyCat() {
+            if (score >= catCost) {
+                score = score - catCost
+                cats = cats + 1
+                catsPerSecond = catsPerSecond + 10
+                catCost = Math.round(catCost * 1.21)
+                watchesPerSecond = watchesPerSecond + 10
+
+                document.getElementById("score").innerHTML = "Relógios: " + score
+                document.getElementById("catCost").innerHTML = catCost
+                document.getElementById("cats").innerHTML = cats
+                document.getElementById("watchesPerSecond").innerHTML = "RPS: " + watchesPerSecond
             }
         }
 
@@ -113,7 +166,7 @@
         
         
         setInterval(function() {
-            score = score + men
+            score = score + men + catsPerSecond
             document.getElementById("score").innerHTML = 'Relógios: ' + score
         }, 1000); // 1000ms = 1 second
 

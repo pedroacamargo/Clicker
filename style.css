@@ -50,7 +50,7 @@ div.wrapper {
     left: -1100px;
     width: 1500px;
     height: 100vh;
-    top: -230px;
+    top: -355px;
     background-image: linear-gradient(to right, #662D8C, #ED1E79);
 }
 
@@ -65,10 +65,31 @@ div.wrapper {
 
 #clickerbutton {
     position: relative;
-    top: 130px;
+    top: 230px;
     z-index: 2;
-    left: 140px;
+    left: 200px;
     cursor: pointer;
+    width: 200px;
+    animation-name: rotation;
+    animation-duration: 100s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes rotation {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) rotate(180deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 .layout {
@@ -98,7 +119,7 @@ div.header {
     cursor: default;
 }
 
-.score {
+.scores {
     font-family: var(--font04);
     position: relative;
     left: 10px;
@@ -110,6 +131,15 @@ div.header {
     border: 2px solid black;
     border-radius: 20px;
     background-color: rgba(255, 217, 0, 0.533);
+}
+
+#watchesPerSecond {
+    padding-right: 5px;
+    border-right: 1px solid black;
+}
+
+#watchesPerSecond, #clickingPower {
+    font-size: .7em;
 }
 
 div#clicker {
@@ -150,9 +180,8 @@ div#clicker > .layout >.background-clicker > button > img {
 
 
 div.upgrades-container {
-    border: 2px solid red;
-    width: 200px;
-    margin-right: 20px;
+    width: 300px;
+    margin-right: 65px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -162,17 +191,19 @@ div.upgrades-container {
 }
 
 .store-img {
-    border: 1px solid orange;
     width: 100%;
-    height: 200px;
 }
 
 .upgrades {
-    border: 1px solid white;
+    background-color: rgb(31, 34, 95);
+    border: 1px solid black;
+    border-radius: 0px 0px 10px 10px;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    flex-direction: row;
+    padding-top: 5px;
 }
 
 .power-up {
@@ -181,7 +212,7 @@ div.upgrades-container {
     background-color: white;
     border-radius: 50px;
     border: 3px solid black;
-    margin: 2px 0px 1px 5px;
+    margin: 10px;
     cursor: pointer;
     font-family: var(--font04);
     color: yellow;
@@ -204,25 +235,20 @@ div.upgrades-container {
     visibility: visible;
 }
 
-#menimg {
+#menimg, #catimg, #cursorimg {
     width: 30px;
     position: relative;
     top: 15px;
 }
 
-#catimg {
-    position: relative;
-}
-
-
-#menupgrade {
+.menupgrade {
     display: block;
 }
 
-.men, .cat {
+.men, .cat, .cursor{
     background-color: rgb(48, 13, 81);
 }
 
-.men:hover, .cat:hover {
+.men:hover, .cat:hover, .cursor:hover {
     background-color: rgb(102, 53, 147);
 }
