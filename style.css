@@ -99,7 +99,7 @@ div.wrapper {
     border: 5px solid black;
     background-image: url("images/background/backgroundanimation.gif");
     background-position: 50% 50%;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-color: rgb(66, 1, 66);
     margin: 0px 20px;
