@@ -44,15 +44,30 @@
                     </div>
                 </div>
 
+                <div id="little-man"></div> <!--<img src="images/personagem/personagem-actionfull.gif" alt="little man" class="little-man" style='width: 30px;'> -->
+
+                <div id="little-cat"></div> <!--<img src="images/gatinho.png" alt="little cat" class="little-cat"> -->
+
+
+                <div class="rain drop1"></div>
+                <div class="rain drop2"></div>
+                <div class="rain drop3"></div>
+                <div class="rain drop4"></div>
+                <div class="rain drop5"></div>
+                <div class="rain drop6"></div>
+                <div class="rain drop7"></div>
+                <div class="rain drop8"></div>
+                <div class="rain drop9"></div>
+                <div class="rain drop10"></div>
+                <div class="rain drop11"></div>
+                <div class="rain drop12"></div>
+                <div class="rain drop13"></div>
+                <div class="rain drop14"></div>
+                <div class="rain drop15"></div>
                 
-                <div class="background-clicker">
-                    <button id="clicar" onclick="clicar(clickingPower)">
-                        <img src="images/personagem/personagem-actionfull.gif" alt="">
-                    </button>
-                </div>
-
+                
             </div> 
-
+            
             
 
 
@@ -106,6 +121,7 @@
 
         var menCost = 15
         var men = 0
+        var menPerSecond = 0
 
         var catCost = 400
         var cats = 0
@@ -131,13 +147,18 @@
             if (score >= menCost) {
                 score = score - menCost
                 men = men + 1
-                menCost = Math.round(menCost * 1.15)  // arredonda
-                watchesPerSecond = watchesPerSecond + 1
+                menCost = Math.round(menCost * 1.25)  // arredonda
+                menPerSecond = Math.round(men * 1.2)
+                watchesPerSecond = menPerSecond + catsPerSecond
 
                 document.getElementById("score").innerHTML = "Relógios: " + score
                 document.getElementById("mencost").innerHTML = menCost
                 document.getElementById("men").innerHTML = men
                 document.getElementById("watchesPerSecond").innerHTML = "RPS: " + watchesPerSecond
+                if (men == 1) {
+                    var littleMan = document.getElementById("little-man")
+                    littleMan.innerHTML = "<img src='images/personagem/personagem-actionfull.gif' alt='little man' class='little-man' style='width: 50px;'>"
+                }
             }
         }
 
@@ -153,6 +174,11 @@
                 document.getElementById("catCost").innerHTML = catCost
                 document.getElementById("cats").innerHTML = cats
                 document.getElementById("watchesPerSecond").innerHTML = "RPS: " + watchesPerSecond
+
+                if (cats == 1) {
+                    var littleCat = document.getElementById("little-cat")
+                    littleCat.innerHTML = "<img src='images/gatinho.png' alt='little cat' class='little-cat' style='width: 25px;'>"
+                }
             }
         }
 
@@ -166,7 +192,7 @@
         
         
         setInterval(function() {
-            score = score + men + catsPerSecond
+            score = score + menPerSecond + catsPerSecond
             document.getElementById("score").innerHTML = 'Relógios: ' + score
         }, 1000); // 1000ms = 1 second
 

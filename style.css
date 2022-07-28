@@ -93,7 +93,8 @@ div.wrapper {
 }
 
 .layout {
-    height: 100%;
+    overflow: hidden;
+    height: 657px;
     width: 525px;
     box-sizing: border-box;
     border: 5px solid black;
@@ -112,6 +113,7 @@ div.header {
     position: relative;
     background-color: black;
     text-align: center;
+    z-index: 10;
 }
 
 .game-name > p {
@@ -162,12 +164,9 @@ div#clicker {
     transform: translate(-50%, -50%);
 }
 
-div#clicker > .layout >.background-clicker > button {
-    height: 0px;
-    width: 0px;
-    cursor: pointer;
+#little-man {
     position: relative;
-    top: 75%;
+    top: 500px;
     left: 80%;
 }
 
@@ -175,13 +174,115 @@ div#clicker > .layout >.background-clicker > button > img {
     position: relative;
     right: 30px;
     bottom: 50px;
-    width: calc(30px + 2vw);
+    width: 50px;
 }
+
+#little-cat {
+    position: relative;
+    width: 25px;
+    top: 330px;
+    left: 20px;
+}
+
+.rain {
+    height: 2px;
+    width: 30px;
+    background-color: rgba(0, 0, 255, 0.463);
+    position: relative;
+    transform: rotate(90deg);
+    animation-name: rain;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.drop1 {
+    left: 100px;
+    animation-duration: 0.8s;
+}
+.drop2 {
+    left: 432px;
+    animation-duration: 0.7s;
+}
+.drop3 {
+    left: 50px;
+    width: 10px;
+    animation-duration: 1.1s;
+
+}
+.drop4 {
+    left: 200px;
+    animation-duration: 0.7s;
+
+}
+.drop5 {
+    left: 467px;
+    animation-duration: 0.8s;
+
+}
+.drop6 {
+    left: 500px;
+    width: 15px;
+    animation-duration: 0.75s;
+
+}
+.drop7 {
+    left: 280px;
+    animation-duration: 0.63s;
+
+}
+.drop8 {
+    left: 231px;
+    animation-duration: 0.7s;
+
+}
+.drop9 {
+    left: 354px;
+    width: 20px;
+    animation-duration: 0.78s;
+}
+
+.drop10 {
+    left: 20px;
+    width: 14px;
+    animation-duration: 0.61s;
+}
+
+.drop11 {
+    left: 41px;
+    animation-duration: 0.58s;
+}
+
+.drop12 {
+    left: 120px;
+    animation-duration: 0.64s;
+}
+
+.drop13 {
+    left: 79px;
+    animation-duration: 0.71s;
+}
+
+.drop14{
+    left: 489px;
+    animation-duration: 0.77s;
+}
+
+@keyframes rain {
+    0% {
+        top: -5%;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+
 
 
 div.upgrades-container {
     width: 300px;
-    margin-right: 65px;
+    margin-right: 5%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
