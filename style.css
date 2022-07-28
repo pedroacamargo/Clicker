@@ -270,7 +270,7 @@ div#clicker > .layout >.background-clicker > button > img {
 
 @keyframes rain {
     0% {
-        top: -5%;
+        top: -30%;
     }
     100% {
         top: 100%;
