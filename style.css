@@ -51,7 +51,7 @@ div.wrapper {
     left: -1100px;
     width: 1500px;
     height: 100vh;
-    top: -355px;
+    top: -75px;
     background-image: linear-gradient(to right, #662D8C, #ED1E79);
 }
 
@@ -64,7 +64,7 @@ div.wrapper {
     box-sizing: border-box;
 }
 
-#clickerbutton {
+/*#clickerbutton {
     position: relative;
     top: 39%;
     z-index: 2;
@@ -77,19 +77,38 @@ div.wrapper {
     animation-direction: normal;
     animation-timing-function: linear;
     transform: translate(-50%, -50%);
+} */
+
+#clickerbtn {
+    background-image: url("images/relogio.png");
+    background-size: contain;
+    height: 250px;
+    width: 180px;
+    transition: all .2s ease-in-out;
+    position: relative;
+    top: -80%;
+    left: 27%;
+    cursor: pointer;
+    animation-name: rotation;
+    animation-duration: 100s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
 }
+
+
 
 @keyframes rotation {
     0% {
-        transform: translate(-50%, -50%) rotate(0deg);
+        transform: rotate(0deg);
     }
 
     50% {
-        transform: translate(-50%, -50%) rotate(180deg);
+        transform: rotate(180deg);
     }
 
     100% {
-        transform: translate(-50%, -50%) rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 
