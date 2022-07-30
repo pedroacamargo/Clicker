@@ -41,6 +41,7 @@
                 <div class="header">
                     <div class="game-name">
                         <p>Maromba</p>
+                        <button onclick="resetGame()">Reset Game</button>
                     </div>
                 </div>
 
@@ -189,12 +190,83 @@
             document.getElementById("score").innerHTML = 'Relógios: ' + score
 
         }
+
+        function loadGame() {
+            var savedGame = JSON.parse(localStorage.getItem("gameSave")); // parse = analisar
+            if (typeof savedGame.score !== "undefined") score = savedGame.score;
+            if (typeof savedGame.clickingPower !== "undefined") clickingPower = savedGame.clickingPower;
+            if (typeof savedGame.cursorCost !== "undefined") cursorCost = savedGame.cursorCost;
+            if (typeof savedGame.cursors !== "undefined") cursors = savedGame.cursors;
+            if (typeof savedGame.menCost !== "undefined") menCost = savedGame.menCost;
+            if (typeof savedGame.men !== "undefined") men = savedGame.men;
+            if (typeof savedGame.menPerSecond !== "undefined") menPerSecond = savedGame.menPerSecond;
+            if (typeof savedGame.catCost !== "undefined") catCost = savedGame.catCost;
+            if (typeof savedGame.cats !== "undefined") cats = savedGame.cats;
+            if (typeof savedGame.catsPerSecond !== "undefined") catsPerSecond = savedGame.catsPerSecond;
+            if (typeof savedGame.watchesPerSecond !== "undefined") watchesPerSecond = savedGame.watchesPerSecond;
+
+        }
+
+        function saveGame() {
+            var gameSave = {
+                score: score,
+                clickingPower: clickingPower,
+                cursorCost: cursorCost,
+                cursors: cursors,
+                menCost: menCost,
+                men: men,
+                menPerSecond: menPerSecond,
+                catCost: catCost,
+                cats: cats,
+                catsPerSecond: catsPerSecond,
+                watchesPerSecond: watchesPerSecond
+            };
+            // alert(gameSave.score)
+            localStorage.setItem("gameSave", JSON.stringify(gameSave));
+        }
+
+        function updateWCPPerSecond() {
+            watchesPerSecond = menPerSecond + catsPerSecond
+            document.getElementById("watchesPerSecond").innerHTML = "RPS: " + watchesPerSecond
+            document.getElementById("clickingPower").innerHTML = "CP: " + clickingPower
+        }
+
+        function resetGame() {
+            if (confirm("Are you sure you want to reset your game?")) {
+                var gameSave = {};
+                localStorage.setItem("gameSave", JSON.stringify(gameSave))
+                location.reload();
+            }
+        }
+
+        window.onload = function() {
+            loadGame();
+            updateWCPPerSecond();
+            document.getElementById("score").innerHTML = "Relógios: " + score
+            document.getElementById("cursorcost").innerHTML = cursorCost
+            document.getElementById("cursors").innerHTML = cursors
+            document.getElementById("mencost").innerHTML = menCost
+            document.getElementById("men").innerHTML = men
+            document.getElementById("catCost").innerHTML = catCost
+            document.getElementById("cats").innerHTML = cats
+        };
         
         
         setInterval(function() {
             score = score + menPerSecond + catsPerSecond
             document.getElementById("score").innerHTML = 'Relógios: ' + score
         }, 1000); // 1000ms = 1 second
+
+        setInterval(function() {
+            saveGame();
+        }, 30000) // 30000ms = 30 seconds
+
+        document.addEventListener("keydown", function(event) {
+            if (event.ctrlKey && event.which == 83) { // ctrl + s
+                event.preventDefault();
+                saveGame()
+            } 
+        }, false)
 
     </script>
 
