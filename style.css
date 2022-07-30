@@ -13,6 +13,7 @@
 * {
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 
 body {
@@ -108,17 +109,82 @@ div.wrapper {
 
 
 div.header {
-    height: 1em;
+    height: 1.2em;
     width: 100%;
     position: relative;
     background-color: black;
-    text-align: center;
     z-index: 10;
 }
 
-.game-name > p {
+#open-menu {
     color: white;
-    cursor: default;
+    margin-left: 20px;
+    background-color: red;
+    padding: 0px 5px;
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 2px 2px 5px black;
+    cursor: pointer;
+    font-family: var(--font04);
+}
+
+#open-menu:hover {
+    background-color: gold;
+    color: black;
+}
+
+#menu {
+    width: 200px;
+    height: 170px;
+    background-color: black;
+    position: relative;
+    top: 10px;
+    left: 20px;
+    display: none;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px;
+    line-height: 40px;
+    border-radius: 20px;
+    border: 1px solid white;
+}
+
+.arrow {
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    transform: rotate(45deg);
+    position: relative;
+    left: 10px;
+    top: -15px;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+}
+
+.btn {
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid red;
+    cursor: pointer;
+    font-family: var(--font04);
+}
+
+.btn:active {
+    background-color: red;
+}
+
+.btn:hover {
+    background-color: gold;
+}
+
+.resetgame {
+    background-color: rgb(113, 47, 47);
+    border: 1px solid gold;
+    color: white;
+}
+
+.resetgame:hover {
+    background-color: red;
 }
 
 .scores {
@@ -319,6 +385,7 @@ div.upgrades-container {
     color: yellow;
     border: 2px solid gold;
     box-shadow: 1px 1px 20px gold;
+    visibility: visible;
 }
 
 .upgrade-hover {
@@ -340,10 +407,6 @@ div.upgrades-container {
     width: 30px;
     position: relative;
     top: 15px;
-}
-
-.menupgrade {
-    display: block;
 }
 
 .men, .cat, .cursor{

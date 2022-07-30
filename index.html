@@ -40,8 +40,16 @@
     
                 <div class="header">
                     <div class="game-name">
-                        <p>Maromba</p>
-                        <button onclick="resetGame()">Reset Game</button>
+        
+                        <span id="open-menu" onclick="abrirMenu()">Menu</span>
+                        <div id="menu">
+                            <div class="arrow"></div>
+                            <span class="btn resume" onclick="fecharMenu()">Fechar Menu</span> 
+                            <br>
+                            <span class="btn savegame" onclick="saveGame()">Salvar jogo</span>
+                            <br>
+                            <span class="btn resetgame" onclick="resetGame()">Resetar Jogo</span>
+                        </div>
                     </div>
                 </div>
 
@@ -72,7 +80,7 @@
             
 
 
-        </div> <!-- End city -->
+        </div> <!-- End clicker -->
 
 
 
@@ -82,7 +90,7 @@
             <div class="upgrades">
 
 
-                <button class="power-up cursor" onclick="buyCursor()" class="menupgrade">
+                <button class="power-up cursor menupgrade" id="cursorupgrade" onclick="buyCursor()">
                     <img src="images/select.png" alt="men" id="cursorimg">
                     <div class="upgrade-hover">
                         Custo: <span id="cursorcost">100</span> <br> Quantidade:<span id="cursors"> 0 </span>
@@ -90,14 +98,14 @@
                 </button> <!-- PRIMEIRO UPGRADE -->
 
 
-                <button class="power-up men" onclick="buyMen()" class="menupgrade">
+                <button class="power-up men menupgrade" id="men-upgrade" onclick="buyMen()">
                     <img src="images/personagem/personagem-action01.png" alt="men" id="menimg">
                     <div class="upgrade-hover">
                         Custo: <span id="mencost">15</span> <br> Quantidade:<span id="men"> 0 </span>
                     </div>
                 </button> <!-- SEGUNDO UPGRADE -->
 
-                <button class="power-up cat" onclick="buyCat()" class="menupgrade">
+                <button class="power-up cat menupgrade" onclick="buyCat()">
                     <img src="images/gatinho.png" alt="men" id="catimg">
                     <div class="upgrade-hover">
                         Custo: <span id="catCost">400</span> <br> Quantidade:<span id="cats"> 0 </span>
@@ -114,6 +122,17 @@
 
 
     <script>
+        function abrirMenu() {
+            var menu = document.getElementById("menu")
+            menu.style.display = "block"
+        }
+
+        function fecharMenu() {
+            var menu = document.getElementById("menu")
+            menu.style.display = "none"
+        }
+
+
         var score = 0
         var clickingPower = 1
 
@@ -129,6 +148,9 @@
         var catsPerSecond = 0
 
         var watchesPerSecond = 0
+
+        
+
 
         function buyCursor() {
             if (score >= cursorCost) {
@@ -158,7 +180,7 @@
                 document.getElementById("watchesPerSecond").innerHTML = "RPS: " + watchesPerSecond
                 if (men == 1) {
                     var littleMan = document.getElementById("little-man")
-                    littleMan.innerHTML = "<img src='images/personagem/personagem-actionfull.gif' alt='little man' class='little-man' style='width: 50px;'>"
+                    littleMan.innerHTML = "<img src='images/personagem/personagem-actionfull.gif' alt='little man' class='little-man' style='width: 50px;'>" // a man appear
                 }
             }
         }
