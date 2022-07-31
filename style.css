@@ -95,7 +95,7 @@ div.wrapper {
 
 .layout {
     overflow: hidden;
-    height: 657px;
+    height: 100vh;
     width: 525px;
     box-sizing: border-box;
     border: 5px solid black;
@@ -104,7 +104,7 @@ div.wrapper {
     background-size: cover;
     background-repeat: no-repeat;
     background-color: rgb(66, 1, 66);
-    margin: 0px 20px;
+    margin: 0px 0px;
 }
 
 
@@ -344,8 +344,6 @@ div#clicker > .layout >.background-clicker > button > img {
 }
 
 
-
-
 div.upgrades-container {
     width: 300px;
     margin-right: 5%;
@@ -361,52 +359,109 @@ div.upgrades-container {
     width: 100%;
 }
 
-.upgrades {
+#upgradeContainer {
+    width: 300px;
+    height: 50px;
+    background-color: black;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+#improvement {
+    position: relative;
+    left: 25px;
+    box-sizing: border-box;
+    height: 90%;
+    top: 50%;
+    width: 50px;
+    cursor: pointer;
+    background-image: linear-gradient(45deg, lightgreen, purple);
+    border: 2px solid gold;
+    margin: 0px 3px;
+    transition: 1s;
+} 
+
+#improvement:hover {
+    background-image: linear-gradient(45deg, black, red);
+}
+
+.improveimg {
+    width: 35px;
+    height: 35px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#shopContainer {
     background-color: rgb(31, 34, 95);
     border: 1px solid black;
     border-radius: 0px 0px 10px 10px;
-    width: 100%;
+    width: 300px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: row;
     padding-top: 5px;
+    max-height: 68vh;
+    overflow: auto;
+    box-shadow: 2px 2px 5px black;
 }
 
 .power-up {
-    width: 80px;
+    width: 260px;
     height: 80px;
     background-color: white;
-    border-radius: 50px;
-    border: 3px solid black;
     margin: 10px;
     cursor: pointer;
     font-family: var(--font04);
     color: yellow;
-    border: 2px solid gold;
-    box-shadow: 1px 1px 20px gold;
+    border: 2px solid purple;
     visibility: visible;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 2px 2px 5px black;
+    text-shadow: 2px 2px 5px black;
+}
+
+#cursorimg {
+    position: relative;
+    flex: 1;
+    border-right: 3px solid black;
+    margin-right: 5px;
 }
 
 .upgrade-hover {
     position: relative;
-    background-color: black;
     width: 100px;
-    border: 2px solid white;
-    top: 20px;
-    right: 15px;
-    display: block;
-    visibility: hidden;
+    flex: 2;
+    visibility: visible;
+    padding-top: 15px;
 }
 
-.power-up:hover > .upgrade-hover {
-    visibility: visible;
+#amount {
+    flex: 2;
+    text-align: center;
+    line-height: 80px;
+    font-size: 2.4em;
+    color: white;
 }
 
 #menimg, #catimg, #cursorimg {
-    width: 30px;
-    position: relative;
-    top: 15px;
+    width: 50px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    background-color: purple;
+    border-radius: 0px 30px 30px 0px;
+}
+
+.name {
+    font-size: 1.5em;
+    color: pink;
 }
 
 .men, .cat, .cursor{
