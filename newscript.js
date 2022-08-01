@@ -33,29 +33,38 @@ var game = {
 var upgrade = {
     name: [
         "Clicks de pedra",
+        "Clicks de Ferro"
     ],
     description: [
         "Eficiência dos cliques dobrada",
+        "Eficiencia dos cliques triplicada"
     ],
     image: [
         "select.png",
+        "select.png",
+
     ],
     type: [
         "click",
+        "click"
     ],
     buildingIndex: [
         -1,
+        -1
     ],
     requirement: [
         100,
+        500
     ],
     bonus: [
         2,
+        3
     ],
     purchased: [
+        false,
         false
     ],
-    cost: [500],
+    cost: [500, 2000],
 
     purchase: function(index) {
         if (!this.purchased[index] && game.score >= this.cost[index]) {

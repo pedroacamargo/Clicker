@@ -177,6 +177,11 @@ div.header {
     background-color: gold;
 }
 
+#estatisticas {
+    background-color: white;
+    
+}
+
 .resetgame {
     background-color: rgb(113, 47, 47);
     border: 1px solid gold;
