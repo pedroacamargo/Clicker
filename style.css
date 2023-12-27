@@ -237,8 +237,19 @@ div#clicker {
 
 #little-man {
     position: relative;
-    top: 500px;
-    left: 80%;
+    top: 630px;
+    left: 300px;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+#little-cat {
+    position: relative;
+    top: 540px;
+    left: 150px;
 }
 
 div#clicker > .layout >.background-clicker > button > img {
@@ -248,12 +259,6 @@ div#clicker > .layout >.background-clicker > button > img {
     width: 50px;
 }
 
-#little-cat {
-    position: relative;
-    width: 25px;
-    top: 330px;
-    left: 20px;
-}
 
 .rain {
     height: 2px;

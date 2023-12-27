@@ -53,8 +53,8 @@ var upgrade = {
         -1
     ],
     requirement: [
-        100,
-        500
+        1,
+        5
     ],
     bonus: [
         2,
@@ -106,16 +106,26 @@ var building = {
         400
     ],
 
+    classNames: [
+        'little-man-img',
+        'little-cat-img',
+    ],
+
+
+
     purchase: function(index) {
         if (game.score >= this.cost[index]) {
             game.score -= this.cost[index];
-            this.count[index]++
+            this.count[index] = this.count[index] + 1;
             this.cost[index] = Math.ceil(this.cost[index] * 1.10)
             display.updateScore();
             display.updateShop();
             display.updateUpgrades();
-        } 
-        
+        }
+
+        if (this.count[index] == 1) {
+            document.getElementById(this.classNames[index]).classList.remove('hidden');
+        }
     }
 }
 
